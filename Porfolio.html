@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivekanand Kumar - AI Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .neural-bg {
+      background: radial-gradient(ellipse at 20% 20%, rgba(125, 0, 255, 0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                  #0A0A0A;
+    }
+    
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    
+    .glow-cyan {
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+    
+    .glow-purple {
+      box-shadow: 0 0 30px rgba(125, 0, 255, 0.3);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #00D4FF 0%, #7D00FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+    }
+    
+    .nav-item {
+      position: relative;
+    }
+    
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00D4FF, #7D00FF);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-item:hover::after {
+      width: 100%;
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .pulse-ring {
+      animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+    
+    .skill-bar {
+      background: linear-gradient(90deg, #00D4FF, #7D00FF);
+      animation: skill-fill 1.5s ease-out forwards;
+    }
+    
+    @keyframes skill-fill {
+      from { width: 0; }
+    }
+    
+    .section {
+      min-height: 100%;
+      scroll-snap-align: start;
+    }
+    
+    .scroll-container {
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      height: 100%;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #00D4FF, #7D00FF);
+      border-radius: 3px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full neural-bg grid-pattern text-white overflow-hidden">
+  <div class="h-full flex flex-col"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 backdrop-blur-md bg-black/30 border-b border-cyan-500/10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+     <div class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center font-bold text-lg">
+       VK
+      </div><span class="mono text-sm text-cyan-400">portfolio.ai</span>
+     </div>
+     <div class="hidden md:flex gap-8"><a href="#hero" class="nav-item text-gray-300 hover:text-white transition-colors">Home</a> <a href="#projects" class="nav-item text-gray-300 hover:text-white transition-colors">Projects</a> <a href="#skills" class="nav-item text-gray-300 hover:text-white transition-colors">Skills</a> <a href="#contact" class="nav-item text-gray-300 hover:text-white transition-colors">Contact</a>
+     </div><a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-sm font-medium hover:opacity-90 transition-opacity"> Hire Me </a>
+    </div>
+   </nav><!-- Main Content -->
+   <div class="scroll-container flex-1 pt-16"><!-- Hero Section -->
+    <section id="hero" class="section min-h-screen flex items-center px-6 py-20">
+     <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+       <div class="space-y-2">
+        <p class="mono text-cyan-400 text-sm tracking-wider">👋 HELLO, I'M</p>
+        <h1 id="hero-title" class="text-4xl md:text-6xl font-bold leading-tight">Vivekanand Kumar <span class="block text-gradient">AI &amp; Data Science Practitioner</span></h1>
+       </div>
+       <p id="hero-subtitle" class="text-xl text-gray-400 leading-relaxed">Building intelligent solutions with <span class="text-cyan-400">LLaMA 3</span>, <span class="text-purple-400">YOLOv5</span>, and <span class="text-cyan-400">Python</span>.</p>
+       <div class="flex flex-wrap gap-4"><a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:glow-cyan transition-all"> View Projects </a> <a href="#contact" class="px-8 py-4 rounded-full border border-cyan-500/50 font-semibold hover:bg-cyan-500/10 transition-all"> Get In Touch </a>
+       </div>
+       <div class="flex gap-6 pt-4">
+        <div class="text-center">
+         <div class="text-3xl font-bold text-gradient">
+          10+
+         </div>
+         <div class="text-sm text-gray-500">
+          Projects
+         </div>
+        </div>
+        <div class="w-px bg-gray-700"></div>
+        <div class="text-center">
+         <div class="text-3xl font-bold text-gradient">
+          5+
+         </div>
+         <div class="text-sm text-gray-500">
+          AI Models
+         </div>
+        </div>
+        <div class="w-px bg-gray-700"></div>
+        <div class="text-center">
+         <div class="text-3xl font-bold text-gradient">
+          3+
+         </div>
+         <div class="text-sm text-gray-500">
+          Years Exp
+         </div>
+        </div>
+       </div>
+      </div><!-- Profile Visual -->
+      <div class="relative flex justify-center">
+       <div class="relative"><!-- Decorative rings -->
+        <div class="absolute inset-0 rounded-full border-2 border-cyan-500/20 pulse-ring"></div>
+        <div class="absolute inset-4 rounded-full border border-purple-500/30"></div><!-- Profile container -->
+        <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-600/20 p-2 floating">
+         <div class="w-full h-full rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center overflow-hidden border-4 border-cyan-500/30"><!-- AI Avatar SVG -->
+          <svg viewbox="0 0 200 200" class="w-4/5 h-4/5"><defs>
+            <lineargradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+             <stop offset="0%" style="stop-color:#D4A574" />
+             <stop offset="100%" style="stop-color:#C4956A" />
+            </lineargradient>
+            <lineargradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+             <stop offset="0%" style="stop-color:#00D4FF" />
+             <stop offset="100%" style="stop-color:#7D00FF" />
+            </lineargradient>
+           </defs> <!-- Body/Shirt --> <ellipse cx="100" cy="200" rx="70" ry="50" fill="url(#shirtGrad)" /> <!-- Neck --> <rect x="85" y="130" width="30" height="30" fill="url(#skinGrad)" /> <!-- Face --> <ellipse cx="100" cy="100" rx="50" ry="55" fill="url(#skinGrad)" /> <!-- Hair --> <ellipse cx="100" cy="60" rx="48" ry="35" fill="#1a1a1a" /> <ellipse cx="55" cy="85" rx="10" ry="20" fill="#1a1a1a" /> <ellipse cx="145" cy="85" rx="10" ry="20" fill="#1a1a1a" /> <!-- Eyes --> <ellipse cx="80" cy="100" rx="8" ry="5" fill="#1a1a1a" /> <ellipse cx="120" cy="100" rx="8" ry="5" fill="#1a1a1a" /> <circle cx="82" cy="99" r="2" fill="white" /> <circle cx="122" cy="99" r="2" fill="white" /> <!-- Eyebrows --> <path d="M70 90 Q80 85 90 90" stroke="#1a1a1a" stroke-width="3" fill="none" /> <path d="M110 90 Q120 85 130 90" stroke="#1a1a1a" stroke-width="3" fill="none" /> <!-- Nose --> <path d="M100 105 L97 118 L103 118 Z" fill="#B8865A" /> <!-- Smile --> <path d="M85 125 Q100 135 115 125" stroke="#8B5A3C" stroke-width="2" fill="none" /> <!-- Glasses (tech look) --> <rect x="65" y="93" width="28" height="18" rx="3" fill="none" stroke="#00D4FF" stroke-width="2" /> <rect x="107" y="93" width="28" height="18" rx="3" fill="none" stroke="#00D4FF" stroke-width="2" /> <line x1="93" y1="100" x2="107" y2="100" stroke="#00D4FF" stroke-width="2" />
+          </svg>
+         </div>
+        </div><!-- Floating tech icons -->
+        <div class="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-gray-900 border border-cyan-500/30 flex items-center justify-center text-2xl floating" style="animation-delay: -1s;">
+         🤖
+        </div>
+        <div class="absolute top-1/4 -right-6 w-12 h-12 rounded-xl bg-gray-900 border border-purple-500/30 flex items-center justify-center text-2xl floating" style="animation-delay: -2s;">
+         🧠
+        </div>
+        <div class="absolute bottom-1/4 -left-8 w-12 h-12 rounded-xl bg-gray-900 border border-cyan-500/30 flex items-center justify-center text-2xl floating" style="animation-delay: -3s;">
+         📊
+        </div>
+        <div class="absolute -bottom-2 right-4 w-12 h-12 rounded-xl bg-gray-900 border border-purple-500/30 flex items-center justify-center text-2xl floating" style="animation-delay: -4s;">
+         ⚡
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Projects Section -->
+    <section id="projects" class="section min-h-screen px-6 py-20">
+     <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+       <p class="mono text-cyan-400 text-sm tracking-wider mb-4">MY WORK</p>
+       <h2 id="projects-heading" class="text-4xl md:text-5xl font-bold">Featured AI Projects</h2>
+       <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto mt-6 rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8"><!-- Project Card 1 -->
+       <div class="card-hover group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border border-gray-700/50">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="p-8 relative z-10">
+         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center text-3xl mb-6">
+          🎓
+         </div>
+         <h3 class="text-xl font-bold mb-3">LLaMA3 Edu Chatbot</h3>
+         <p class="text-gray-400 mb-6 leading-relaxed">Subject-specific AI tutor for personalized learning using LLaMA 3 language model.</p>
+         <div class="flex flex-wrap gap-2 mb-6"><span class="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">LLaMA 3</span> <span class="px-3 py-1 rounded-full text-xs bg-purple-500/10 text-purple-400 border border-purple-500/30">NLP</span> <span class="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Python</span>
+         </div><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg> GitHub Link </a>
+        </div>
+       </div><!-- Project Card 2 -->
+       <div class="card-hover group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border border-gray-700/50">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="p-8 relative z-10">
+         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-3xl mb-6">
+          👁️
+         </div>
+         <h3 class="text-xl font-bold mb-3">YOLO Image Detection</h3>
+         <p class="text-gray-400 mb-6 leading-relaxed">Real-time object detection system powered by YOLOv5 for accurate visual recognition.</p>
+         <div class="flex flex-wrap gap-2 mb-6"><span class="px-3 py-1 rounded-full text-xs bg-purple-500/10 text-purple-400 border border-purple-500/30">YOLOv5</span> <span class="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">PyTorch</span> <span class="px-3 py-1 rounded-full text-xs bg-purple-500/10 text-purple-400 border border-purple-500/30">CV</span>
+         </div><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg> GitHub Link </a>
+        </div>
+       </div><!-- Project Card 3 -->
+       <div class="card-hover group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border border-gray-700/50">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="p-8 relative z-10">
+         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center text-3xl mb-6">
+          📄
+         </div>
+         <h3 class="text-xl font-bold mb-3">Resume Analyzer Pro</h3>
+         <p class="text-gray-400 mb-6 leading-relaxed">AI tool for job category matching and resume optimization using NLP techniques.</p>
+         <div class="flex flex-wrap gap-2 mb-6"><span class="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">NLP</span> <span class="px-3 py-1 rounded-full text-xs bg-purple-500/10 text-purple-400 border border-purple-500/30">ML</span> <span class="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Python</span>
+         </div><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg> GitHub Link </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Skills Section -->
+    <section id="skills" class="section min-h-screen px-6 py-20">
+     <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+       <p class="mono text-cyan-400 text-sm tracking-wider mb-4">EXPERTISE</p>
+       <h2 class="text-4xl md:text-5xl font-bold">Skills &amp; Tools</h2>
+       <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto mt-6 rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8"><!-- Languages -->
+       <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur rounded-2xl p-8 border border-gray-700/50">
+        <div class="flex items-center gap-4 mb-8">
+         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+         </div>
+         <h3 class="text-xl font-bold">Languages</h3>
+        </div>
+        <div class="space-y-6">
+         <div>
+          <div class="flex justify-between mb-2"><span class="flex items-center gap-2"> <span class="text-2xl">🐍</span> Python </span> <span class="mono text-cyan-400 text-sm">95%</span>
+          </div>
+          <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+           <div class="skill-bar h-full rounded-full" style="width: 95%"></div>
+          </div>
+         </div>
+         <div>
+          <div class="flex justify-between mb-2"><span class="flex items-center gap-2"> <span class="text-2xl">☕</span> Java </span> <span class="mono text-cyan-400 text-sm">80%</span>
+          </div>
+          <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+           <div class="skill-bar h-full rounded-full" style="width: 80%"></div>
+          </div>
+         </div>
+         <div>
+          <div class="flex justify-between mb-2"><span class="flex items-center gap-2"> <span class="text-2xl">🗃️</span> SQL </span> <span class="mono text-cyan-400 text-sm">85%</span>
+          </div>
+          <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+           <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+          </div>
+         </div>
+        </div>
+       </div><!-- AI/ML -->
+       <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur rounded-2xl p-8 border border-gray-700/50">
+        <div class="flex items-center gap-4 mb-8">
+         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

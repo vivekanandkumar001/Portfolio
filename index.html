@@ -348,20 +348,21 @@
 
           <article class="project-card" data-category="vision" data-reveal>
             <div class="project-visual">
-              <img src="assets/thumb-lens.jpg" alt="Actual Hugging Face Space page for Progeni-Lens real-time object detection" loading="eager" decoding="async" />
-              <span class="visual-badge">Live demo</span>
+              <img src="assets/thumb-lens.jpg" alt="Actual Progeni Lens live console showing YOLOv5 detection boxes and alerts" loading="eager" decoding="async" />
+              <span class="visual-badge">Live at progeni-lens.vercel.app</span>
             </div>
             <div class="project-body">
               <div class="project-meta"><span class="tag">Demo</span><span>Computer vision</span></div>
               <h3>Progeni-Lens</h3>
-              <p>Real-time object and risk detection for exam monitoring, traffic analysis, security and industrial safety — on uploads or a live webcam.</p>
+              <p>YOLOv5s ONNX running fully in the browser — upload an image or open the webcam, then filter detections for traffic, proctoring, security and workplace scenarios.</p>
               <ul class="project-points">
-                <li>YOLOv5 exported to ONNX with OpenCV preprocessing</li>
-                <li>25% lower latency and sustained 30+ FPS on standard hardware</li>
+                <li>FP16 ONNX Runtime Web inference with letterbox preprocessing and per-class NMS</li>
+                <li>Client-side webcam + upload pipeline with mode-based COCO class alerts</li>
               </ul>
-              <div class="tech-row"><span>YOLOv5</span><span>OpenCV</span><span>ONNX</span><span>Python</span></div>
+              <div class="tech-row"><span>YOLOv5</span><span>ONNX</span><span>ONNX Runtime Web</span><span>JavaScript</span></div>
               <div class="project-links">
-                <a href="https://huggingface.co/spaces/vivekananda0010/Yolov5_project" target="_blank" rel="noopener noreferrer">Live demo <span>↗</span></a>
+                <a href="https://progeni-lens.vercel.app" target="_blank" rel="noopener noreferrer">Live demo <span>↗</span></a>
+                <a href="https://github.com/vivekanandkumar001/Progeni-Lens" target="_blank" rel="noopener noreferrer">Code <span>↗</span></a>
               </div>
             </div>
           </article>

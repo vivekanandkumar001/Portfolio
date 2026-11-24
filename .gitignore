@@ -1,0 +1,12 @@
+# Personal job-search tracking — not for the public portfolio repo
+job-applications-summary.md
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Dependencies (this site is dependency-free, but keep this safe)
+node_modules/

@@ -1,0 +1,10 @@
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.svg text
+*.html text
+*.css text
+*.js text
+*.md text

@@ -10,3 +10,5 @@ Thumbs.db
 
 # Dependencies (this site is dependency-free, but keep this safe)
 node_modules/
+
+.vercel

@@ -29,7 +29,7 @@
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     if (themeColorMeta) {
-      themeColorMeta.setAttribute("content", theme === "light" ? "#f7f8fc" : "#080b12");
+      themeColorMeta.setAttribute("content", theme === "light" ? "#f5f7fd" : "#080b12");
     }
     if (themeToggle) {
       const next = theme === "dark" ? "light" : "dark";
@@ -102,6 +102,23 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   const revealItems = $$("[data-reveal]");
+
+  const staggerGroups = [
+    ".hero-copy > [data-reveal]",
+    ".hero-stats > div",
+    ".proof-rail .proof-item",
+    ".about-values > div",
+    ".stack-grid > [data-reveal]",
+    ".projects-grid > [data-reveal]",
+    ".timeline > .timeline-item",
+    ".journey-aside > *"
+  ];
+
+  staggerGroups.forEach(function (selector) {
+    $$(selector).forEach(function (item, index) {
+      item.style.setProperty("--reveal-delay", Math.min(index * 70, 420) + "ms");
+    });
+  });
 
   if ("IntersectionObserver" in window && !reduceMotion) {
     const revealObserver = new IntersectionObserver(function (entries) {

@@ -52,6 +52,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
   <div class="page-bg" aria-hidden="true">
     <div class="grid-layer"></div>
@@ -63,7 +64,7 @@
 
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Vivekanand Kumar — home">
+      <a class="brand" href="#top">
         <span class="brand-mark">VK</span>
         <span class="brand-copy">
           <strong>Vivekanand Kumar</strong>
@@ -134,9 +135,13 @@
             </a>
           </div>
 
-          <div class="availability" data-reveal>
-            <span class="pulse-dot"></span>
-            <span>Open to fresher <strong>GenAI / LLM</strong> and <strong>full-stack</strong> roles</span>
+          <div class="availability-card" data-reveal>
+            <span class="availability-icon"><span class="pulse-dot"></span></span>
+            <span class="availability-copy">
+              <small>Open to work · 2026 graduate</small>
+              <strong>GenAI / LLM · AI/ML · Full-stack</strong>
+            </span>
+            <span class="availability-target"><small>Target</small><strong>₹15 LPA</strong></span>
           </div>
 
           <div class="hero-socials" data-reveal aria-label="Profiles">
@@ -189,6 +194,25 @@
         <div><strong data-count="13">0</strong><span>Hugging Face Spaces</span></div>
         <div><strong data-count="122">0</strong><span>Tools in Progeni Bench</span></div>
         <div><strong data-count="1">0</strong><span>Year hands-on</span></div>
+      </div>
+
+      <div class="container proof-rail" data-reveal aria-label="Live projects">
+        <a href="https://atlas.progeni.live" target="_blank" rel="noopener noreferrer" class="proof-item proof-atlas">
+          <img src="assets/thumb-atlas.jpg" alt="Progeni Atlas AI live dashboard" loading="lazy" decoding="async" />
+          <span><i>Atlas AI</i> Live interview platform</span>
+        </a>
+        <a href="https://progeni-lens.vercel.app" target="_blank" rel="noopener noreferrer" class="proof-item proof-lens">
+          <img src="assets/thumb-lens.jpg" alt="Progeni Lens live object detection console" loading="lazy" decoding="async" />
+          <span><i>Progeni Lens</i> Browser computer vision</span>
+        </a>
+        <a href="https://bench.progeni.live" target="_blank" rel="noopener noreferrer" class="proof-item proof-bench">
+          <img src="assets/thumb-bench.jpg" alt="Progeni Bench live utility portal" loading="lazy" decoding="async" />
+          <span><i>Progeni Bench</i> 122 browser tools</span>
+        </a>
+        <a href="https://wakit.progeni.live" target="_blank" rel="noopener noreferrer" class="proof-item proof-wakit">
+          <img src="assets/thumb-wakit.jpg" alt="WaKit live WhatsApp utilities site" loading="lazy" decoding="async" />
+          <span><i>WaKit</i> Private media tools</span>
+        </a>
       </div>
     </section>
 

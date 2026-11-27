@@ -52,15 +52,22 @@
   const toTop = $("#to-top");
   const menuToggle = $(".menu-toggle");
   const mobileNav = $("#mobile-nav");
+  const scrollProgress = $("#scroll-progress");
 
   function updateScrollState() {
     const scrolled = window.scrollY > 24;
     if (header) header.classList.toggle("is-scrolled", scrolled);
     if (toTop) toTop.classList.toggle("is-visible", window.scrollY > 700);
+    if (scrollProgress) {
+      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const progress = Math.min(window.scrollY / maxScroll, 1);
+      scrollProgress.style.transform = "scaleX(" + progress + ")";
+    }
   }
 
   updateScrollState();
   window.addEventListener("scroll", updateScrollState, { passive: true });
+  window.addEventListener("resize", updateScrollState, { passive: true });
 
   function setMenu(open) {
     if (!menuToggle || !mobileNav) return;

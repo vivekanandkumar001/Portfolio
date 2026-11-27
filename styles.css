@@ -793,7 +793,7 @@ html[data-theme="light"] .visual-wakit { background: linear-gradient(145deg, #ee
 }
 .toast.is-visible { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 
-[data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+[data-reveal] { opacity: 1; transform: none; transition: opacity .5s var(--ease), transform .5s var(--ease); }
 [data-reveal].is-revealed { opacity: 1; transform: none; }
 
 /* =========================================================
@@ -1258,19 +1258,19 @@ html[data-theme="light"] .site-footer { background: rgba(255, 255, 255, 0.62); b
    ========================================================= */
 
 [data-reveal].is-revealed {
-  animation: revealUp 0.72s var(--ease) backwards;
+  animation: revealUp 0.55s var(--ease);
   animation-delay: var(--reveal-delay, 0ms);
 }
 
 @keyframes revealUp {
-  from { opacity: 0; transform: translateY(26px) scale(0.985); }
+  from { opacity: 0.42; transform: translateY(12px) scale(0.995); }
   to { opacity: 1; transform: none; }
 }
 
 .proof-rail.is-revealed .proof-item,
 .about-copy.is-revealed .about-values > div,
 .journey-aside.is-revealed > * {
-  animation: revealUp 0.65s var(--ease) backwards;
+  animation: revealUp 0.55s var(--ease);
   animation-delay: calc(var(--reveal-delay, 0ms) + 120ms);
 }
 
@@ -1336,6 +1336,53 @@ html[data-theme="light"] .site-footer { background: rgba(255, 255, 255, 0.62); b
 .theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
 html[data-theme="light"] .theme-toggle .icon-moon { display: block; opacity: 0; transform: rotate(90deg) scale(0.5); }
 html[data-theme="light"] .theme-toggle .icon-sun { display: block; opacity: 1; transform: rotate(0) scale(1); }
+
+/* =========================================================
+   VISIBILITY BOOST — stronger type and clearer surfaces
+   ========================================================= */
+:root {
+  --text-soft: #c9d1e4;
+  --text-muted: #a3adc6;
+  --border: rgba(255, 255, 255, 0.13);
+  --border-strong: rgba(255, 255, 255, 0.22);
+}
+
+html[data-theme="light"] {
+  --text: #0b1224;
+  --text-soft: #2c3854;
+  --text-muted: #4a5570;
+  --border: rgba(23, 32, 60, 0.17);
+  --border-strong: rgba(23, 32, 60, 0.28);
+  --shadow: 0 24px 64px rgba(38, 50, 90, 0.18);
+}
+
+body { font-size: 16px; line-height: 1.72; }
+.hero-lead { font-size: 1.12rem; }
+.muted { color: var(--text-soft); }
+.hero-socials a { color: var(--text-soft); font-size: 13.5px; }
+.hero-stats span { font-size: 12.5px; }
+.availability-copy small, .availability-target small { color: var(--text-muted); font-size: 10px; }
+.availability-copy strong { font-size: 14px; }
+.section-no { font-size: 12px; font-weight: 600; }
+.section-head.split > p { color: var(--text-soft); font-size: 15px; }
+.about-values small, .profile-list dt, .panel-foot, .form-note, .site-footer p { font-size: 12px; }
+.project-meta { font-size: 11px; }
+.project-points li { font-size: 13px; }
+.terminal-body { font-size: 12px; }
+.terminal-title, .panel-head, .now-label { font-size: 11px; }
+.skill-list li { font-size: 12.5px; }
+.contact-item small { font-size: 11px; }
+.copy-btn, .contact-item > a, .contact-note { font-size: 12px; }
+
+html[data-theme="light"] .hero-stats > div,
+html[data-theme="light"] .stack-card,
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .about-panel,
+html[data-theme="light"] .contact-form,
+html[data-theme="light"] .contact-item,
+html[data-theme="light"] .mini-card { background: rgba(255, 255, 255, 0.97); }
+html[data-theme="light"] .proof-item { border-color: rgba(23, 32, 60, 0.18); }
+html[data-theme="light"] .skill-list li { border-color: color-mix(in srgb, var(--card-accent) 28%, transparent); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1040px) {
